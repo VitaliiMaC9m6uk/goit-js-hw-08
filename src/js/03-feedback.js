@@ -14,10 +14,8 @@ function saveFeedbackInLocal(event) {
 }
 
 const savedFeedback = JSON.parse(localStorage.getItem('feedback-form-state'));
-if (savedFeedback) {
-    const inputValue = savedFeedback.email;
-    const textAreaValue = savedFeedback.message;
-    input.value = inputValue; 
-    textArea.value = textAreaValue;
+if (savedFeedback) {    
+    input.value = savedFeedback.email; 
+    textArea.value = savedFeedback.message;
 }
 
