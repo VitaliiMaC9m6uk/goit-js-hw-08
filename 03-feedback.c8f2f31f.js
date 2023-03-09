@@ -1,2 +1,0 @@
-const e=document.querySelector(".feedback-form"),t=document.querySelector("input"),a=document.querySelector("textarea");e.addEventListener("input",(function(e){const{elements:{email:t,message:a}}=e.currentTarget;localStorage.setItem("feedback-form-state",JSON.stringify({email:t.value,message:a.value}))}));const o=JSON.parse(localStorage.getItem("feedback-form-state"));if(o){const e=o.email,r=o.message;t.value=e,a.value=r}
-//# sourceMappingURL=03-feedback.c8f2f31f.js.map
