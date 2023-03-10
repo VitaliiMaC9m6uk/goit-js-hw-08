@@ -15,7 +15,10 @@ function onSubmitForm(event) {
     event.currentTarget.reset();
     console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
     localStorage.removeItem(STORAGE_KEY);
-
+    delete formData.email;
+    delete formData.message;
+    
+    
 }
 function saveFeedbackInLocal(event) {
     if (savedFeedback) {
@@ -23,15 +26,13 @@ function saveFeedbackInLocal(event) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(savedFeedback));
         return;
     }
-    formData[event.target.name] = event.target.value;
-    console.log(formData)
+    formData[event.target.name] = event.target.value;   
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
     
 }
-console.log(form[0].value)
+
 const savedFeedback = JSON.parse(localStorage.getItem(STORAGE_KEY));
 if (savedFeedback) {    
-
     form[0].value = savedFeedback.email; 
     form[1].value = savedFeedback.message;
 }
